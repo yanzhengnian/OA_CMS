@@ -23,32 +23,28 @@ __CreateJSPath = function (js) {
     }
     return path;
 }
-var bootPATH = __CreateJSPath("conf.js"); 
+var bootPATH = __CreateJSPath("lib");
 
+document.write('<link href="' + bootPATH + 'lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />');
+document.write('<link href="' + bootPATH + 'lib/bootstrap-table.min.css" rel="stylesheet" type="text/css" />');
+document.write('<link href="' + bootPATH + 'css/theme.css" rel="stylesheet" type="text/css" />');
+document.write('<link href="' + bootPATH + 'lib/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />');
 
-
-//document.write('<link rel="stylesheet" type="text/css" href="'+bootPATH+'/bootstrap/css/bootstrap.css">';
-//document.write('<link rel="stylesheet" type="text/css" href="'+bootPATH+'../stylesheets/theme.css">';
-//document.write('<link rel="stylesheet" href="'+bootPATH+'/font-awesome/css/font-awesome.css">';
-
-document.write('<link href="' + bootPATH + 'bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />');
-document.write('<link href="' + bootPATH + '../stylesheets/theme.css" rel="stylesheet" type="text/css" />');
-document.write('<link href="' + bootPATH + 'font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />');
-
-document.write('<script src="'+bootPATH+'jquery-1.11.2.min.js" type="text/javascript" ></sc'+'ript>');
-document.write('<script src="'+bootPATH+'jquery.session.js" type="text/javascript" ></sc'+'ript>');
-document.write('<script src="'+bootPATH+'bootstrap/js/bootstrap.min.js" type="text/javascript" ></sc'+'ript>');
-document.write('<script src="'+bootPATH+'bootbox.js" type="text/javascript" ></sc'+'ript>');
-document.write('<script src="'+bootPATH+'bootstrap-paginator.js" type="text/javascript" ></sc'+'ript>');
+document.write('<script src="'+bootPATH+'lib/jquery-1.11.2.min.js" type="text/javascript" ></sc'+'ript>');
+document.write('<script src="'+bootPATH+'lib/jquery.session.js" type="text/javascript" ></sc'+'ript>');
+document.write('<script src="'+bootPATH+'lib/bootstrap/js/bootstrap.min.js" type="text/javascript" ></sc'+'ript>');
+document.write('<script src="'+bootPATH+'lib/bootstrap-table.min.js" type="text/javascript" ></sc'+'ript>');
+document.write('<script src="'+bootPATH+'lib/bootbox.js" type="text/javascript" ></sc'+'ript>');
+document.write('<script src="'+bootPATH+'lib/bootstrap-paginator.js" type="text/javascript" ></sc'+'ript>');
  
 
 function ajaxService(obj_param) {
 	var sucFn = function(){
 		console.info("success");
-	}
+	};
 	var errFn = function(e){
 		console.info("error"+e);
-	}
+	};
 	var settings = {type:"get",async:true,dataType:"json",success:sucFn,error:errFn};
 	var options = jQuery.extend(settings,obj_param);
 	$.ajax({
@@ -64,4 +60,4 @@ function ajaxService(obj_param) {
 			options.error(e);
 		}
 	});
-};
+}

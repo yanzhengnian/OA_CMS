@@ -17,7 +17,7 @@ function getHomeTem() {
 	obj.error = function(e) {
 		console.info(e);
 	}
-	//ajaxService(objGetLeft);
+	//ajaxService(obj);
     var homeH = '<div class="navbar"><div class="navbar-inner"><ul class="nav pull-right"><li>'+
         '<a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">Settings</a>'+
         '</li><li id="fat-menu" class="dropdown">'+
@@ -31,7 +31,7 @@ function getHomeTem() {
         '<li role="presentation" class="active"> <a href="home.html">Home</a>'+
         '</li> <li role="presentation"> <a href="profile.html">Profile</a> </li> <li role="presentation">'+
         '<a href="message.html">Messages</a> </li> </ul> </div> </div>';
-    //ajaxService(obj);
+	$('#cmsHead').html(homeH);
     var objGetLeft = {
         //		type:"get",
         dataType: "html",
@@ -44,15 +44,16 @@ function getHomeTem() {
             console.info(e);
         }
     };
-    $('#cmsHead').html(homeH);
+	ajaxService(objGetLeft);
 	var leftH = '<div class="sidebar-nav">'+
 		'<a href="home.html" class="nav-header"><i class="icon-question-sign"></i>Help</a>'+
-		'<a href="user.html" class="nav-header"><i class="icon-user"></i>USER</a>'+
 		'<a href="users.html" class="nav-header"><i class="icon-repeat"></i>USERS</a>'+
+		'<a href="user.html" class="nav-header"><i class="icon-user"></i>USER</a>'+
 		'<a href="help.html" class="nav-header"><i class="icon-comment"></i>Help</a>'+
+		'<a href="users-table.html" class="nav-header"><i class="icon-comment"></i>Help</a>'+
 		'<a href="faq.html" class="nav-header"><i class="icon-legal"></i>FAQ</a>'+
 		'</div>';
-	$('#lefter').html(leftH);
+	//$('#lefter').html(leftH);
 }
 //message菜单
 function getMessTem() {

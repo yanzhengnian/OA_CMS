@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap Admin</title>
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="../lib/conf.js" type="text/javascript"></script>
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+	</head>
+
+	<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+	<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+	<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+	<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+	<!--[if (gt IE 9)|!(IE)]><!-->
+
+	<body class="">
+		<!--<![endif]-->
+		<div id="cmsHead">
+		</div>
+		<div id="lefter">
+		</div>
+		<div class="content">
+			<div class="header">
+				<h1 class="page-title">Users</h1>
+			</div>
+			<ul class="breadcrumb">
+				<li>
+					<a href="home.html">Home</a> <span class="divider">/</span></li>
+				<li class="active">Users</li>
+			</ul>
+
+			<div class="container-fluid">
+				<div class="row-fluid">
+
+					<div class="btn-toolbar hidden" >
+						<button class="btn btn-primary"><i class="icon-plus"></i> New User</button>
+						<button class="btn">Import</button>
+						<button class="btn">Export</button>
+						<div class="btn-group">
+						</div>
+					</div>
+
+					<div class="block">
+						<p class="block-heading">查询条件</p>
+						<div class="block-body">
+							<div class="row-fluid">
+								<form id="formSearch" class="form-horizontal">
+									<div class="form-group" style="margin-top:15px">
+										<label class="control-label span1" for="txt_search_departmentname">部门名称</label>
+										<div class="span3">
+											<input type="text" class="input-xlarge" id="txt_search_departmentname">
+										</div>
+										<label class="control-label span1" for="txt_search_statu">状态</label>
+										<div class="span3">
+											<input type="text" class="input-xlarge" id="txt_search_statu">
+										</div>
+										<div class="span4" style="text-align:left;">
+											<button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+						<div id="toolbar" class="btn-group">
+							<button id="btn_add" type="button" class="btn btn-default">
+								<span class="icon-plus" aria-hidden="true"></span>新增
+							</button>
+							<button id="btn_edit" type="button" class="btn btn-default">
+								<span class="icon-pencil" aria-hidden="true"></span>修改
+							</button>
+							<button id="btn_delete" type="button" class="btn btn-default">
+								<span class="icon-remove" aria-hidden="true"></span>删除
+							</button>
+						</div>
+					<div class="panel-body" style="padding-bottom:0px;">
+						<table id="table1" data-pagination-loop="true" data-pagination="true" data-page-number="1">
+
+						</table>
+					</div>
+
+				</div>
+				<footer>
+					<hr>
+
+					<p class="pull-right">Collect from
+						<a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+					</p>
+
+					<p>&copy; 2012
+						<a href="#" target="_blank">Portnine</a>
+					</p>
+				</footer>
+			</div>
+		</div>
+
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			 $(function() { 
+				getHomeTem();
+				 $('#table1').bootstrapTable({
+					 url: bootPATH+'data/data1.json',
+					 //			sortStable: true,
+					 toolbar: '#toolbar',
+					 sortName: "id", //排序的字段
+					 sortOrder: "desc", //排序方式
+					 sortable: true, //是否启用排序
+					 iconsPrefix: "glyphicon",
+					 search: true, //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+					 striped: true, //是否显示行间隔色
+					 showRefresh: true, //是否显示刷新按钮
+					 showColumns: true, //是否显示所有的列
+					 //          clickToSelect: true,                //是否启用点击选中行
+					 pagination: true, //是否显示分页（*）
+					 //			pageNumber:2,				//如果设置了分页，首页页码
+					 pageSize: 10, //	如果设置了分页，页面数据条数
+					 pageList: [1, 5, 10, 20], //如果设置了分页，设置可供选择的页面数据条数
+					 selectItemName: "radio", //radio or checkbox 的字段名
+					 columns: [{
+						 checkbox: true,
+						 width: 60
+					 }, {
+						 field: 'id',
+						 title: 'Item ID',
+						 class: 'n-ui'//添加样式
+					 }, {
+						 field: 'name',
+						 title: 'Item Name'
+					 }, {
+						 field: 'price',
+						 title: 'Item Price'
+					 }, ]
+				 });
+			});
+		</script>
+
+	</body>
+
+</html>
