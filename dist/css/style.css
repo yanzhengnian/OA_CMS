@@ -1,0 +1,54 @@
+@charset "utf-8";
+body {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: green;
+  float: left;
+}
+.box2 {
+  width: 300px;
+  height: 300px;
+  border: solid yellow 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  float: left;
+}
+.sanjiao {
+  border-width: 100px;
+  border-color: #ccc transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.box_02 {
+  width: 300px -100;
+  color: #c2c2c2;
+}
+.list {
+  width: 600px;
+  margin: 30px auto;
+  padding-left: 0;
+  list-style: none;
+}
+.list li {
+  height: 30px;
+  line-height: 30px;
+  background-color: pink;
+  margin-bottom: 5px;
+}
+.list a {
+  float: left;
+}
+.list a:hover {
+  color: red;
+}
+.list span {
+  float: right;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "oa_cms",
+  "version": "1.0.0",
+  "description": "cms project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanzhengnian/oa_cms.git"
+  },
+  "keywords": [
+    "cms"
+  ],
+  "author": "theyear",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanzhengnian/oa_cms/issues"
+  },
+  "homepage": "https://github.com/yanzhengnian/oa_cms#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-less": "^3.3.0"
+  }
+}
