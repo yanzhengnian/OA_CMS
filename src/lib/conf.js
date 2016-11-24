@@ -45,7 +45,7 @@ function ajaxService(obj_param) {
 	var errFn = function(e){
 		console.info("error"+e);
 	};
-	var settings = {type:"get",async:true,dataType:"json",success:sucFn,error:errFn};
+	var settings = {type:"get",async:true,dataType:"json",data:new Date().getTime(),success:sucFn,error:errFn};
 	var options = jQuery.extend(settings,obj_param);
 	$.ajax({
 		type: options.type,

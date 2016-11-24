@@ -15,7 +15,7 @@ gulp.task('testImage', function () {
         .pipe(imagemin()) //该任务调用的模块
         .pipe(gulp.dest('dist/images')); //将会在src/css下生成图片
 });
-gulp.task('default',['testImage']); //定义默认任务 elseTask为其他任务，该示例没有定义elseTask任务
+gulp.task('default',['testImage','testLess']); //定义默认任务 elseTask为其他任务，该示例没有定义elseTask任务
  
 //gulp.task(name[, deps], fn) 定义任务  name：任务名称 deps：依赖任务名称 fn：回调函数
 //gulp.src(globs[, options]) 执行任务处理的文件  globs：处理的文件路径(字符串或者字符串数组) 
