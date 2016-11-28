@@ -11,9 +11,9 @@ gulp.task('testLess', function () {
 });
 //定义一个testImage任务（自定义任务名称）
 gulp.task('testImage', function () {
-    gulp.src('src/images/*.{png,jpg,gif,ico}') //该任务针对的文件
+    gulp.src('src/img/*.{png,jpg,gif,ico}') //该任务针对的文件
         .pipe(imagemin()) //该任务调用的模块
-        .pipe(gulp.dest('dist/images')); //将会在src/css下生成图片
+        .pipe(gulp.dest('dist/img')); //将会在src/css下生成图片
 });
 gulp.task('default',['testImage','testLess']); //定义默认任务 elseTask为其他任务，该示例没有定义elseTask任务
  

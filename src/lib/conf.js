@@ -36,7 +36,13 @@ document.write('<script src="'+bootPATH+'lib/bootstrap/js/bootstrap.min.js" type
 document.write('<script src="'+bootPATH+'lib/bootstrap-table.min.js" type="text/javascript" ></sc'+'ript>');
 document.write('<script src="'+bootPATH+'lib/bootbox.js" type="text/javascript" ></sc'+'ript>');
 document.write('<script src="'+bootPATH+'lib/bootstrap-paginator.js" type="text/javascript" ></sc'+'ript>');
- 
+
+
+//table-x-editable
+document.write('<link href="' + bootPATH + 'lib/bootstrap-editable.css" rel="stylesheet" type="text/css" />');
+document.write('<script src="'+bootPATH+'lib/bootstrap-editable.min.js" type="text/javascript" ></sc'+'ript>');
+document.write('<script src="'+bootPATH+'lib/bootstrap-table-editable.js" type="text/javascript" ></sc'+'ript>');
+
 
 function ajaxService(obj_param) {
 	var sucFn = function(){
