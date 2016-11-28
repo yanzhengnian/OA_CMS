@@ -280,8 +280,7 @@
             var selects = $table.bootstrapTable('getSelections');
             console.info(JSON.stringify(selects));
             for(let i= 0,len = selects.length;i < len;i++){
-                debugger;
-                var id = selects[i].id
+                var id = selects[i].id;
                 $table.bootstrapTable('removeByUniqueId', id);
             }
         });
