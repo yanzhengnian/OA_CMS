@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告主信息</title>
+    <script src="../lib/conf.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id="cmsHead">
+</div>
+<div id="lefter">
+</div>
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">Users</h1>
+    </div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="home.html">Home</a> <span class="divider">/</span></li>
+        <li class="active">Users</li>
+    </ul>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+            <div class="btn-toolbar hidden">
+                <button class="btn btn-primary"><i class="icon-plus"></i> New User</button>
+                <button class="btn">Import</button>
+                <button class="btn">Export</button>
+                <div class="btn-group">
+                </div>
+            </div>
+
+            <div class="block">
+                <p class="block-heading">查询条件</p>
+                <div class="block-body">
+                    <div class="row-fluid">
+                        <form id="formSearch" class="form-horizontal">
+                            <div class="form-group" style="margin-top:15px">
+                                <label class="control-label span1" for="txt_search_departmentname">部门名称</label>
+                                <div class="span3">
+                                    <input type="text" class="input-xlarge" id="txt_search_departmentname">
+                                </div>
+                                <label class="control-label span1" for="txt_search_statu">状态</label>
+                                <div class="span3">
+                                    <input type="text" class="input-xlarge" id="txt_search_statu">
+                                </div>
+                                <div class="span4" style="text-align:left;">
+                                    <button type="button" style="margin-left:50px" id="btn_query"
+                                            class="btn btn-primary">查询
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div id="toolbar" class="btn-group">
+                <button id="btn_add" type="button" class="btn btn-default">
+                    <span class="icon-plus" aria-hidden="true"></span>新增
+                </button>
+                <button id="btn_edit" type="button" class="btn btn-default">
+                    <span class="icon-pencil" aria-hidden="true"></span>修改
+                </button>
+                <button id="btn_delete" type="button" class="btn btn-default">
+                    <span class="icon-remove" aria-hidden="true"></span>删除
+                </button>
+            </div>
+            <div class="panel-body" style="padding-bottom:0px;">
+                <table id="tableAdvert" data-pagination-loop="true" data-pagination="true" data-page-number="1">
+
+                </table>
+            </div>
+
+        </div>
+        <footer>
+            <hr>
+
+            <p class="pull-right">Collect from
+                <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+            </p>
+
+            <p>&copy; 2012
+                <a href="#" target="_blank">Portnine</a>
+            </p>
+        </footer>
+    </div>
+</div>
+</body>
+
+
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var $tableAdvert = $("#tableAdvert");
+    $(function () {
+        getHomeTem();
+        $tableAdvert.bootstrapTable({
+            url: '',
+            toolbar:'#toolbar',
+            columns: [
+                {
+                    field: 'personID',
+                    title: 'ID'
+                }, {
+                    field: 'cookie',
+                    title: 'cookie'
+                }, {
+                    field: 'deviceCode',
+                    title: '设备编码'
+                }, {
+                    field: 'mobile',
+                    title: '手机号'
+                }, {
+                    field: 'email',
+                    title: 'email'
+                }, {
+                    field: 'otherID1',
+                    title: '标记人的其它代号'
+                }]
+        });
+    });
+</script>
+</html>
