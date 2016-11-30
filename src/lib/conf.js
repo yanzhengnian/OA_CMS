@@ -45,25 +45,13 @@ document.write('<script src="'+bootPATH+'lib/bootstrap-table-editable.js" type="
 
 
 function ajaxService(obj_param) {
-	var sucFn = function(){
+	var sucFn = function(d){
 		console.info("success");
 	};
 	var errFn = function(e){
 		console.info("error"+e);
 	};
-	var settings = {type:"get",async:true,dataType:"json",data:new Date().getTime(),success:sucFn,error:errFn};
+	var settings = {type:"get",async:true,dataType:"json",jsonp:undefined,jsonp:undefined,data:new Date().getTime(),success:sucFn,error:errFn};
 	var options = jQuery.extend(settings,obj_param);
-	$.ajax({
-		type: options.type,
-		async: options.async,
-		data: options.data,
-		url: options.url,
-		dataType: options.dataType,
-		success: function(d) {
-			options.success(d);
-		},
-		error: function(e) {
-			options.error(e);
-		}
-	});
+	$.ajax(options);
 }

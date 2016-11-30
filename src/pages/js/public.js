@@ -1,5 +1,5 @@
 (function() {
-	if(!$.session.get('login')) {
+	if($.session.get('login')!="success") {
 		location.href = "sign-in.html";
 	};
 	//	getHomeTem();
